@@ -1,0 +1,3277 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "ExamSystemApi",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/api/v1/login": {
+      "post": {
+        "summary": "login",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": {
+                        "studentId": 0,
+                        "studentName": "",
+                        "grade": "",
+                        "major": "",
+                        "clazz": "",
+                        "institute": "",
+                        "tel": "",
+                        "email": "",
+                        "pwd": "",
+                        "cardId": "",
+                        "sex": "",
+                        "role": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/teachers/{page}/{size}": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询所有教师",
+                      "data": {
+                        "records": [
+                          {
+                            "teacherId": 0,
+                            "teacherName": "",
+                            "institute": "",
+                            "sex": "",
+                            "tel": "",
+                            "email": "",
+                            "pwd": "",
+                            "cardId": "",
+                            "type": "",
+                            "role": ""
+                          }
+                        ],
+                        "total": 0,
+                        "size": 0,
+                        "current": 0,
+                        "ascs": [
+                          ""
+                        ],
+                        "descs": [
+                          ""
+                        ],
+                        "optimizeCountSql": false,
+                        "isSearchCount": false,
+                        "searchCount": false,
+                        "pages": 0,
+                        "asc": [
+                          ""
+                        ],
+                        "desc": [
+                          ""
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/teacher/{teacherId}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": {
+                        "teacherId": 0,
+                        "teacherName": "",
+                        "institute": "",
+                        "sex": "",
+                        "tel": "",
+                        "email": "",
+                        "pwd": "",
+                        "cardId": "",
+                        "type": "",
+                        "role": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "deleteById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/teacher": {
+      "put": {
+        "summary": "update",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Teacher",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Teacher",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/students/{page}/{size}": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "分页查询所有学生",
+                      "data": {
+                        "records": [
+                          {
+                            "studentId": 0,
+                            "studentName": "",
+                            "grade": "",
+                            "major": "",
+                            "clazz": "",
+                            "institute": "",
+                            "tel": "",
+                            "email": "",
+                            "pwd": "",
+                            "cardId": "",
+                            "sex": "",
+                            "role": ""
+                          }
+                        ],
+                        "total": 0,
+                        "size": 0,
+                        "current": 0,
+                        "ascs": [
+                          ""
+                        ],
+                        "descs": [
+                          ""
+                        ],
+                        "optimizeCountSql": false,
+                        "isSearchCount": false,
+                        "searchCount": false,
+                        "pages": 0,
+                        "asc": [
+                          ""
+                        ],
+                        "desc": [
+                          ""
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/student/{studentId}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": {
+                        "studentId": 0,
+                        "studentName": "",
+                        "grade": "",
+                        "major": "",
+                        "clazz": "",
+                        "institute": "",
+                        "tel": "",
+                        "email": "",
+                        "pwd": "",
+                        "cardId": "",
+                        "sex": "",
+                        "role": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "deleteById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "删除成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/studentPWD": {
+      "put": {
+        "summary": "updatePwd",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Student",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "密码更新成功",
+                      "data": null
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/student": {
+      "put": {
+        "summary": "update",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Student",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "更新成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Student",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "添加成功",
+                      "data": null
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/scores": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询所有学生成绩",
+                      "data": [
+                        {
+                          "examCode": 0,
+                          "studentId": 0,
+                          "subject": "",
+                          "ptScore": 0,
+                          "etScore": 0,
+                          "score": 0,
+                          "scoreId": 0,
+                          "answerDate": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/score/{page}/{size}/{studentId}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "studentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "根据ID查询成绩",
+                      "data": {
+                        "records": [
+                          {
+                            "examCode": 0,
+                            "studentId": 0,
+                            "subject": "",
+                            "ptScore": 0,
+                            "etScore": 0,
+                            "score": 0,
+                            "scoreId": 0,
+                            "answerDate": ""
+                          }
+                        ],
+                        "total": 0,
+                        "size": 0,
+                        "current": 0,
+                        "ascs": [
+                          ""
+                        ],
+                        "descs": [
+                          ""
+                        ],
+                        "optimizeCountSql": false,
+                        "isSearchCount": false,
+                        "searchCount": false,
+                        "pages": 0,
+                        "asc": [
+                          ""
+                        ],
+                        "desc": [
+                          ""
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/score/{studentId}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "studentId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "根据ID查询成绩",
+                      "data": [
+                        {
+                          "examCode": 0,
+                          "studentId": 0,
+                          "subject": "",
+                          "ptScore": 0,
+                          "etScore": 0,
+                          "score": 0,
+                          "scoreId": 0,
+                          "answerDate": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/score": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Score",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "成绩添加成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/scores/{examCode}": {
+      "get": {
+        "summary": "findByExamCode",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "examCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询成功",
+                      "data": [
+                        {
+                          "examCode": 0,
+                          "studentId": 0,
+                          "subject": "",
+                          "ptScore": 0,
+                          "etScore": 0,
+                          "score": 0,
+                          "scoreId": 0,
+                          "answerDate": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/replay": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Replay",
+                "description": "fun.timu.exam.entity.Replay"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 400,
+                      "message": "添加失败！",
+                      "data": null
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/replay/{messageId}": {
+      "get": {
+        "summary": "findAllById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "messageId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "根据messageId查询",
+                      "data": [
+                        {
+                          "messageId": 0,
+                          "replayId": 0,
+                          "replay": "",
+                          "replayTime": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/papers": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResultPaperManage"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "message": "",
+                      "data": {
+                        "paperId": 0,
+                        "questionType": 0,
+                        "questionId": 0
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/paper/{paperId}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "paperId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AnswerDetailVO",
+                    "description": "fun.timu.exam.vo.AnswerDetailVO"
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "0": []
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/paperManage": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaperManage",
+                "description": "返回的结果包装在value中，value可以是单个对象"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "添加成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/multiQuestionId": {
+      "get": {
+        "summary": "findOnlyQuestion",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询成功",
+                      "data": {
+                        "questionId": 0,
+                        "subject": "",
+                        "section": "",
+                        "answerA": "",
+                        "answerB": "",
+                        "answerC": "",
+                        "answerD": "",
+                        "question": "",
+                        "level": "",
+                        "rightAnswer": "",
+                        "analysis": "",
+                        "score": 0
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/MultiQuestion": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MultiQuestion",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "添加成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/messages/{page}/{size}": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResultMessage"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "message": "",
+                      "data": {
+                        "id": 0,
+                        "temp_id": 0,
+                        "title": "",
+                        "content": "",
+                        "time": "",
+                        "replays": [
+                          {
+                            "messageId": 0,
+                            "replayId": 0,
+                            "replay": "",
+                            "replayTime": ""
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/message/{id}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "根据Id查询",
+                      "data": {
+                        "id": 0,
+                        "temp_id": 0,
+                        "title": "",
+                        "content": "",
+                        "time": "",
+                        "replays": [
+                          {
+                            "messageId": 0,
+                            "replayId": 0,
+                            "replay": "",
+                            "replayTime": ""
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "delete",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": 0
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/message": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Message",
+                "description": "返回的结果包装在value中，value可以是单个对象"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "添加成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/judgeQuestion": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JudgeQuestion",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "添加成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/judgeQuestionId": {
+      "get": {
+        "summary": "findOnlyQuestionId",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询成功",
+                      "data": {
+                        "questionId": 0,
+                        "subject": "",
+                        "question": "",
+                        "answer": "",
+                        "level": "",
+                        "section": "",
+                        "score": 0,
+                        "analysis": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/item": {
+      "post": {
+        "summary": "ItemController",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Item",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 400,
+                      "message": "选择题数据库获取失败",
+                      "data": null
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/fillQuestion": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FillQuestion",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "添加成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/fillQuestionId": {
+      "get": {
+        "summary": "findOnlyQuestionId",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询成功",
+                      "data": {
+                        "questionId": 0,
+                        "subject": "",
+                        "question": "",
+                        "answer": "",
+                        "score": 0,
+                        "level": "",
+                        "section": "",
+                        "analysis": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/exams": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "message": "",
+                      "data": {}
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/exams/{page}/{size}": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 0,
+                      "message": "",
+                      "data": {}
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/exam/{examCode}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "examCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功！",
+                      "data": {
+                        "examCode": 0,
+                        "description": "",
+                        "source": "",
+                        "paperId": 0,
+                        "examDate": "",
+                        "totalTime": 0,
+                        "grade": "",
+                        "term": "",
+                        "major": "",
+                        "institute": "",
+                        "totalScore": 0,
+                        "type": "",
+                        "tips": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "deleteById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "examCode",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "删除成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/exam": {
+      "put": {
+        "summary": "update",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExamManage",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "更新成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExamManage",
+                "description": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 400,
+                      "message": "添加失败",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/examManagePaperId": {
+      "get": {
+        "summary": "findOnlyPaperId",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": {
+                        "examCode": 0,
+                        "description": "",
+                        "source": "",
+                        "paperId": 0,
+                        "examDate": "",
+                        "totalTime": 0,
+                        "grade": "",
+                        "term": "",
+                        "major": "",
+                        "institute": "",
+                        "totalScore": 0,
+                        "type": "",
+                        "tips": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/answers/{page}/{size}": {
+      "get": {
+        "summary": "findAllQuestion",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "size",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询所有题库",
+                      "data": {
+                        "records": [
+                          {
+                            "question": "",
+                            "subject": "",
+                            "score": "",
+                            "section": "",
+                            "level": "",
+                            "type": ""
+                          }
+                        ],
+                        "total": 0,
+                        "size": 0,
+                        "current": 0,
+                        "ascs": [
+                          ""
+                        ],
+                        "descs": [
+                          ""
+                        ],
+                        "optimizeCountSql": false,
+                        "isSearchCount": false,
+                        "searchCount": false,
+                        "pages": 0,
+                        "asc": [
+                          ""
+                        ],
+                        "desc": [
+                          ""
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/answers/by-question-id-and-type": {
+      "get": {
+        "summary": "findByQuestionIdAndType",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "questionId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "records": [
+                        {
+                          "questionId": "",
+                          "question": "",
+                          "subject": "",
+                          "score": "",
+                          "section": "",
+                          "level": "",
+                          "type": ""
+                        }
+                      ],
+                      "total": 0,
+                      "size": 0,
+                      "current": 0,
+                      "ascs": [
+                        ""
+                      ],
+                      "descs": [
+                        ""
+                      ],
+                      "optimizeCountSql": false,
+                      "isSearchCount": false,
+                      "searchCount": false,
+                      "pages": 0,
+                      "asc": [
+                        ""
+                      ],
+                      "desc": [
+                        ""
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/answers/by-type": {
+      "get": {
+        "summary": "findAllByType",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "查询成功",
+                      "data": [
+                        {
+                          "questionId": "",
+                          "question": "",
+                          "subject": "",
+                          "score": "",
+                          "answer": "",
+                          "section": "",
+                          "level": "",
+                          "type": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/admins": {
+      "get": {
+        "summary": "findAll",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": [
+                        {
+                          "adminId": 0,
+                          "adminName": "",
+                          "sex": "",
+                          "tel": "",
+                          "email": "",
+                          "pwd": "",
+                          "cardId": "",
+                          "role": ""
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/admin/{adminId}": {
+      "get": {
+        "summary": "findById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "adminId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": {
+                        "adminId": 0,
+                        "adminName": "",
+                        "sex": "",
+                        "tel": "",
+                        "email": "",
+                        "pwd": "",
+                        "cardId": "",
+                        "role": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "deleteById",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "adminId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": null
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "update",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "adminId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "adminId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "adminName",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tel",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pwd",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cardId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/v1/admin": {
+      "post": {
+        "summary": "add",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "adminId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "adminName",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tel",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "email",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pwd",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cardId",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResult",
+                  "description": "fun.timu.exam.entity.ApiResult"
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例",
+                    "value": {
+                      "code": 200,
+                      "message": "请求成功",
+                      "data": 0
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "description": ""
+          },
+          "question": {
+            "type": "string",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "score": {
+            "type": "string",
+            "description": ""
+          },
+          "section": {
+            "type": "string",
+            "description": ""
+          },
+          "level": {
+            "type": "string",
+            "description": ""
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "Teacher": {
+        "type": "object",
+        "properties": {
+          "teacherId": {
+            "type": "integer",
+            "description": ""
+          },
+          "teacherName": {
+            "type": "string",
+            "description": ""
+          },
+          "institute": {
+            "type": "string",
+            "description": ""
+          },
+          "sex": {
+            "type": "string",
+            "description": ""
+          },
+          "tel": {
+            "type": "string",
+            "description": ""
+          },
+          "email": {
+            "type": "string",
+            "description": ""
+          },
+          "pwd": {
+            "type": "string",
+            "description": ""
+          },
+          "cardId": {
+            "type": "string",
+            "description": ""
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          },
+          "role": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "Student": {
+        "type": "object",
+        "properties": {
+          "studentId": {
+            "type": "integer",
+            "description": ""
+          },
+          "studentName": {
+            "type": "string",
+            "description": ""
+          },
+          "grade": {
+            "type": "string",
+            "description": ""
+          },
+          "major": {
+            "type": "string",
+            "description": ""
+          },
+          "clazz": {
+            "type": "string",
+            "description": ""
+          },
+          "institute": {
+            "type": "string",
+            "description": ""
+          },
+          "tel": {
+            "type": "string",
+            "description": ""
+          },
+          "email": {
+            "type": "string",
+            "description": ""
+          },
+          "pwd": {
+            "type": "string",
+            "description": ""
+          },
+          "cardId": {
+            "type": "string",
+            "description": ""
+          },
+          "sex": {
+            "type": "string",
+            "description": ""
+          },
+          "role": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "PaperManage": {
+        "type": "object",
+        "properties": {
+          "paperId": {
+            "type": "integer",
+            "description": ""
+          },
+          "questionType": {
+            "type": "integer",
+            "description": ""
+          },
+          "questionId": {
+            "type": "integer",
+            "description": ""
+          }
+        }
+      },
+      "AnswerVO": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "description": ""
+          },
+          "question": {
+            "type": "string",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "score": {
+            "type": "string",
+            "description": ""
+          },
+          "section": {
+            "type": "string",
+            "description": ""
+          },
+          "level": {
+            "type": "string",
+            "description": ""
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "ApiResult": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "错误码，表示一种错误类型\n请求成功，状态码为200"
+          },
+          "message": {
+            "type": "string",
+            "description": "对错误代码的详细解释"
+          },
+          "data": {
+            "type": "integer",
+            "description": "返回的结果包装在value中，value可以是单个对象"
+          }
+        }
+      },
+      "Replay": {
+        "type": "object",
+        "properties": {
+          "messageId": {
+            "type": "integer",
+            "description": ""
+          },
+          "replayId": {
+            "type": "integer",
+            "description": ""
+          },
+          "replay": {
+            "type": "string",
+            "description": ""
+          },
+          "replayTime": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "ApiResultPaperManage": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "错误码，表示一种错误类型\n请求成功，状态码为200"
+          },
+          "message": {
+            "type": "string",
+            "description": "对错误代码的详细解释"
+          },
+          "data": {
+            "$ref": "#/components/schemas/PaperManage",
+            "description": "返回的结果包装在value中，value可以是单个对象"
+          }
+        }
+      },
+      "Message": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": ""
+          },
+          "temp_id": {
+            "type": "integer",
+            "description": "解决id为null创建的一个临时id"
+          },
+          "title": {
+            "type": "string",
+            "description": ""
+          },
+          "content": {
+            "type": "string",
+            "description": ""
+          },
+          "time": {
+            "type": "string",
+            "description": ""
+          },
+          "replays": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Replay",
+              "description": "fun.timu.exam.entity.Replay"
+            },
+            "description": "一对多关系，评论信息"
+          }
+        }
+      },
+      "JudgeQuestion": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "integer",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "question": {
+            "type": "string",
+            "description": ""
+          },
+          "answer": {
+            "type": "string",
+            "description": ""
+          },
+          "level": {
+            "type": "string",
+            "description": ""
+          },
+          "section": {
+            "type": "string",
+            "description": ""
+          },
+          "score": {
+            "type": "integer",
+            "description": ""
+          },
+          "analysis": {
+            "type": "string",
+            "description": "题目解析"
+          }
+        }
+      },
+      "Item": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "paperId": {
+            "type": "integer",
+            "description": ""
+          },
+          "changeNumber": {
+            "type": "integer",
+            "description": ""
+          },
+          "fillNumber": {
+            "type": "integer",
+            "description": ""
+          },
+          "judgeNumber": {
+            "type": "integer",
+            "description": ""
+          }
+        }
+      },
+      "FillQuestion": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "integer",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "question": {
+            "type": "string",
+            "description": ""
+          },
+          "answer": {
+            "type": "string",
+            "description": ""
+          },
+          "score": {
+            "type": "integer",
+            "description": ""
+          },
+          "level": {
+            "type": "string",
+            "description": ""
+          },
+          "section": {
+            "type": "string",
+            "description": ""
+          },
+          "analysis": {
+            "type": "string",
+            "description": "题目解析"
+          }
+        }
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "integer",
+            "description": ""
+          },
+          "password": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "Score": {
+        "type": "object",
+        "properties": {
+          "examCode": {
+            "type": "integer",
+            "description": ""
+          },
+          "studentId": {
+            "type": "integer",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "ptScore": {
+            "type": "integer",
+            "description": ""
+          },
+          "etScore": {
+            "type": "integer",
+            "description": ""
+          },
+          "score": {
+            "type": "integer",
+            "description": ""
+          },
+          "scoreId": {
+            "type": "integer",
+            "description": ""
+          },
+          "answerDate": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "MapList?": {
+        "type": "object",
+        "properties": {
+          "0": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      },
+      "MultiQuestion": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "integer",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "section": {
+            "type": "string",
+            "description": ""
+          },
+          "answerA": {
+            "type": "string",
+            "description": ""
+          },
+          "answerB": {
+            "type": "string",
+            "description": ""
+          },
+          "answerC": {
+            "type": "string",
+            "description": ""
+          },
+          "answerD": {
+            "type": "string",
+            "description": ""
+          },
+          "question": {
+            "type": "string",
+            "description": ""
+          },
+          "level": {
+            "type": "string",
+            "description": ""
+          },
+          "rightAnswer": {
+            "type": "string",
+            "description": ""
+          },
+          "analysis": {
+            "type": "string",
+            "description": "题目解析"
+          },
+          "score": {
+            "type": "integer",
+            "description": ""
+          }
+        }
+      },
+      "ApiResultMessage": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "错误码，表示一种错误类型\n请求成功，状态码为200"
+          },
+          "message": {
+            "type": "string",
+            "description": "对错误代码的详细解释"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Message",
+            "description": "返回的结果包装在value中，value可以是单个对象"
+          }
+        }
+      },
+      "ExamManage": {
+        "type": "object",
+        "properties": {
+          "examCode": {
+            "type": "integer",
+            "description": ""
+          },
+          "description": {
+            "type": "string",
+            "description": ""
+          },
+          "source": {
+            "type": "string",
+            "description": ""
+          },
+          "paperId": {
+            "type": "integer",
+            "description": ""
+          },
+          "examDate": {
+            "type": "string",
+            "description": ""
+          },
+          "totalTime": {
+            "type": "integer",
+            "description": ""
+          },
+          "grade": {
+            "type": "string",
+            "description": ""
+          },
+          "term": {
+            "type": "string",
+            "description": ""
+          },
+          "major": {
+            "type": "string",
+            "description": ""
+          },
+          "institute": {
+            "type": "string",
+            "description": ""
+          },
+          "totalScore": {
+            "type": "integer",
+            "description": ""
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          },
+          "tips": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "AnswerDetailVO": {
+        "type": "object",
+        "properties": {
+          "questionId": {
+            "type": "string",
+            "description": ""
+          },
+          "subject": {
+            "type": "string",
+            "description": ""
+          },
+          "question": {
+            "type": "string",
+            "description": ""
+          },
+          "answerA": {
+            "type": "string",
+            "description": ""
+          },
+          "answerB": {
+            "type": "string",
+            "description": ""
+          },
+          "answerC": {
+            "type": "string",
+            "description": ""
+          },
+          "answerD": {
+            "type": "string",
+            "description": ""
+          },
+          "rightAnswer": {
+            "type": "string",
+            "description": ""
+          },
+          "analysis": {
+            "type": "string",
+            "description": ""
+          },
+          "score": {
+            "type": "integer",
+            "description": ""
+          },
+          "section": {
+            "type": "string",
+            "description": ""
+          },
+          "level": {
+            "type": "string",
+            "description": ""
+          },
+          "answer": {
+            "type": "string",
+            "description": ""
+          },
+          "type": {
+            "type": "string",
+            "description": ""
+          }
+        }
+      },
+      "IPageAnswerVO": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnswerVO",
+              "description": "fun.timu.exam.vo.AnswerVO"
+            },
+            "description": ""
+          },
+          "total": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "size": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "current": {
+            "type": "integer",
+            "description": "",
+            "format": "int64"
+          },
+          "ascs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "descs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": ""
+          },
+          "optimizeCountSql": {
+            "type": "boolean",
+            "description": ""
+          },
+          "isSearchCount": {
+            "type": "boolean",
+            "description": ""
+          },
+          "searchCount": {
+            "type": "boolean"
+          },
+          "pages": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "asc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "desc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {}
+  },
+  "servers": []
+}

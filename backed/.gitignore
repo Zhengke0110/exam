@@ -1,0 +1,51 @@
+# 编译输出目录
+/target/
+/build/
+
+# IDE 相关文件
+/.idea/
+/*.iml
+/.vscode/
+/.settings/
+/*.class
+
+# Maven 和 Gradle 相关文件
+/.m2/repository/
+/.gradle/
+/gradle/
+/build/
+
+# 日志文件
+/logs/
+/log/
+/tmp/
+
+# 操作系统相关文件
+.DS_Store
+Thumbs.db
+
+# 其他临时文件
+*.log
+*.tmp
+*.swp
+*.bak
+*.class
+
+# Docker 文件
+/docker-compose.override.yml
+/.dockerenv
+
+# JUnit 测试报告
+/test-results/
+/reports/
+
+# Spring Boot DevTools 文件
+/.springBeans
+
+# IntelliJ IDEA 运行配置文件
+/*.ipr
+/*.iws
+
+# Eclipse 配置文件
+/.metadata/
+/bin/
