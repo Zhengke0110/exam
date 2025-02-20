@@ -1,4 +1,4 @@
-# Miss.Lu 在线考试系统
+# 在线考试系统（移动端）
 
 <p align="center">
   <img src="Images/home-admin.png" alt="系统首页" width="600">
@@ -79,7 +79,7 @@
 1. 克隆项目
 
 ```bash
-git clone https://github.com/your-username/M.git
+git clone https://github.com/Zhengke0110/exam
 cd M
 ```
 
