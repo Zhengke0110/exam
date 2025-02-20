@@ -136,6 +136,8 @@ server {
 
 ## 📸 系统截图
 
+### 🏠 系统首页
+
 <table>
   <tr>
     <td><img src="Images/home-admin.png" alt="管理员首页" /></td>
@@ -144,6 +146,56 @@ server {
   <tr>
     <td><img src="Images/home-student.png" alt="学生首页" /></td>
     <td><img src="Images/考试管理-teacher.png" alt="考试管理" /></td>
+  </tr>
+</table>
+
+### 👨‍💼 管理员功能
+
+<table>
+  <tr>
+    <td><img src="Images/管理员专属-admin.png" alt="管理员专属功能" /></td>
+    <td><img src="Images/教师列表-admin.png" alt="教师管理" /></td>
+  </tr>
+  <tr>
+    <td><img src="Images/学生列表-admin.png" alt="学生管理" /></td>
+    <td><img src="Images/个人信息-管理员.png" alt="管理员个人信息" /></td>
+  </tr>
+</table>
+
+### 👨‍🏫 教师功能
+
+<table>
+  <tr>
+    <td><img src="Images/题库管理-teacher.png" alt="题库管理" /></td>
+    <td><img src="Images/在线组卷-teacher.png" alt="在线组卷" /></td>
+  </tr>
+  <tr>
+    <td><img src="Images/新增考试-teacher.png" alt="新增考试" /></td>
+    <td><img src="Images/考试管理-teacher.png" alt="考试管理" /></td>
+  </tr>
+  <tr>
+    <td><img src="Images/成绩列表-teacher.png" alt="成绩列表" /></td>
+    <td><img src="Images/成绩详情-teacher.png" alt="成绩详情" /></td>
+  </tr>
+  <tr>
+    <td><img src="Images/个人信息-教师.png" alt="教师个人信息" /></td>
+    <td><img src="Images/根据学生列表查成绩-teacher.png" alt="学生成绩查询" /></td>
+  </tr>
+</table>
+
+### 👨‍🎓 学生功能
+
+<table>
+  <tr>
+    <td><img src="Images/学生参加考试-student.png" alt="考试列表" /></td>
+    <td><img src="Images/学生参加考试2-student.png" alt="考试进行中" /></td>
+  </tr>
+  <tr>
+    <td><img src="Images/学生参加考试4-student.png" alt="答题界面" /></td>
+    <td><img src="Images/学生参加考试8-student.png" alt="考试完成" /></td>
+  </tr>
+  <tr>
+    <td><img src="Images/个人信息-学生.png" alt="学生个人信息" /></td>
   </tr>
 </table>
 
